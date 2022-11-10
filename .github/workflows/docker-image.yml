@@ -28,3 +28,13 @@ jobs:
           context: JokeAPI
           push: true
           tags: lukeroy/humor-prototype-1:latest
+  
+  deply:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Connect to VPN
+        run: echo ${{ secrets.VPN_PASSWORD }} | sudo openconnect --user=${{ secrets.VPN_USER }} --passwd-on-stdin ${{ secrets.VPN_URL }}
