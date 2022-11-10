@@ -36,5 +36,8 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
 
+      - name: Install Openconnect
+        run: apt update && apt install openconnect -y
+
       - name: Connect to VPN
         run: echo ${{ secrets.VPN_PASSWORD }} | sudo openconnect --user=${{ secrets.VPN_USER }} --passwd-on-stdin ${{ secrets.VPN_URL }}
