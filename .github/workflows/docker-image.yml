@@ -40,4 +40,4 @@ jobs:
         run: apt update && apt install openconnect -y
 
       - name: Connect to VPN
-        run: echo ${{ secrets.VPN_PASSWORD }} | sudo openconnect --user=${{ secrets.VPN_USER }} --passwd-on-stdin ${{ secrets.VPN_URL }}
+        run: echo ${{ secrets.VPN_PASSWORD }} | openconnect --user=${{ secrets.VPN_USER }} --passwd-on-stdin ${{ secrets.VPN_URL }}
