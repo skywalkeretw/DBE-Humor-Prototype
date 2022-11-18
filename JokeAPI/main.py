@@ -24,14 +24,14 @@ def isFunnyTxt(prediction):
     if len(prediction) > 1:
         for  v in enumerate(prediction):
             if v > 0.5:
-                ret =  "is Funny" + str(v[0]*100) + "%"
+                ret =  "is funny" + str(v[0]*100) + "%"
             else:
-                ret = "is Not Funny" + str(v[0]*100) + "%"
+                ret = "is not funny" + str(v[0]*100) + "%"
     else:
         if prediction > 0.5:
-            ret =  "is Funny"
+            ret =  "is funny"
         else:
-            ret = "is Not Funny"
+            ret = "is not funny"
     
     return ret
 
