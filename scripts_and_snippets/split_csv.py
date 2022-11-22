@@ -4,15 +4,28 @@ import os
 import shutil
 
 
-
 def split_csv_into_dir(csv_name, label, feature):
+    """
+    split_csv_into_dir takes a csv file and splits its content by the label. The two new data sets pos and neg are split into a train and test set for each. These are now stored in respective directories 
+
+    :param csv_name: name or url of the csv contining the data
+    :param label: the label column inside the csv is expected to be bool
+    :param feature: the feature column inside the csv is expected to be string
+    """ 
 
     # Read in dataset
     data = pd.read_csv(csv_name)
     total_data = len(data)
     print("---")
     print("Data has been read in")
+    print("Columns:\n")
+    print(data.columns)
+    print("Head()\n")
     print(data.head())
+    print("Info()\n")
+    print(data.info())
+    print("Describe()\n")
+    print(data.describe())
     print("There are", total_data, "entries")
     print("")
     
