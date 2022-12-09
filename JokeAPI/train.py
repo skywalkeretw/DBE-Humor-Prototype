@@ -17,7 +17,7 @@ oov_tok = "<OOV>"
 training_size = 20000
 
 # Desired accuracy of the training
-DESIRED_ACCURACY = 0.922
+DESIRED_ACCURACY = 0.98
 
 # callback function used to end training after DESIRED_ACCURACY is reached will stop even if epochs are still missing
 class myCallback(tf.keras.callbacks.Callback):
