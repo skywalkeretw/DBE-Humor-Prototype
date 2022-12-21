@@ -1,3 +1,4 @@
+# Use tensorflow/tensorflow as Trainer Image to train the model 
 FROM tensorflow/tensorflow AS trainer
 
 # install dependancies
@@ -12,7 +13,7 @@ RUN python train.py
 
 
 
-
+# use tensorflow/tensorflow to run the flask server containing the trained Model 
 FROM tensorflow/tensorflow
 
 # install dependancies
