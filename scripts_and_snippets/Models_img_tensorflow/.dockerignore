@@ -1,0 +1,4 @@
+*.ipynb
+Dockerfile
+.ipynb_checkpoints/
+*.xlsx
