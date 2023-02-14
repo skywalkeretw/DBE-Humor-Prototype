@@ -34,7 +34,8 @@ def getAnswer(percentage):
 def home():
     joke = ""
     percentage = ""
-
+    comment = ""
+    emoji = ""
     if request.method == 'POST':
         joke = request.form['joke']
         sentence = []
