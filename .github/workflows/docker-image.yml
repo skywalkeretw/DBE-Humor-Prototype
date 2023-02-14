@@ -28,3 +28,10 @@ jobs:
           context: JokeAPI
           push: true
           tags: lukeroy/humor-prototype-1:latest
+
+      - name: Build and push lukeroy/humor-prototype-2-bert
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: JokeAPIBert
+          push: true
+          tags: lukeroy/humor-prototype-2-bert:latest
