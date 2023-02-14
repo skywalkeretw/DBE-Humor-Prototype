@@ -10,6 +10,7 @@ import tensorflow_text as text
 
 #-------------------------------------------
 
+# Configure Flask Server Framework
 app=Flask(__name__)
 vocab_size = 10000
 embedding_dim = 16
@@ -19,21 +20,15 @@ padding_type='post'
 
 def isFunnyTxt(prediction):
     ret = ""
-    if len(prediction) > 1:
-        for  v in enumerate(prediction):
-            if v > 0.5:
-                ret =  "is funny" + str(v[0]*100) + "%"
-            else:
-                ret = "is not funny" + str(v[0]*100) + "%"
+
+    if prediction > 0.5:
+        ret =  "is funny"
     else:
-        if prediction > 0.5:
-            ret =  "is funny"
-        else:
-            ret = "is not funny"
+        ret = "is not funny"
     
     return ret
 
-
+# home / root function that is called when Page is loaded or a sentence is checked
 @app.route('/', methods=['GET','POST'])
 @app.route('/home', methods=['GET','POST'])
 def home():
@@ -45,15 +40,17 @@ def home():
         joke = request.form['joke']
         sentence = []
         sentence.append(joke)
-        prediction = tf.sigmoid(model(tf.constant(sentence)))
-        percentage = prediction[0][0]*100
+        prediction = tf.sigmoid(model(tf.constant(sentence))).numpy()[0][0].item()
+        percentage = prediction*100
         isFunny = isFunnyTxt(prediction)
+    # Template generation for flask pass specify the name of the template variable and its data 'varname=data' e.g joke=joke
     return render_template('index.html', joke=joke, isFunny=isFunny, percentage=percentage)
 
 
 if __name__ == '__main__':
 
     global model
+    # Load Trained Model
     model =  tf.saved_model.load('/model')
-
+    # Run Server on Port 8080
     app.run(debug=False, host='0.0.0.0', port=8080)
