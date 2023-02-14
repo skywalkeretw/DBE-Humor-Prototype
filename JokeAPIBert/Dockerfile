@@ -3,10 +3,12 @@ FROM lukeroy/dbe-models:latest as data
 # use tensorflow/tensorflow to run the flask server containing the trained Model 
 FROM tensorflow/tensorflow
 # install dependancies
-RUN pip install openpyxl numpy pandas matplotlib tensorflow-text flask
+RUN pip install openpyxl numpy pandas matplotlib tensorflow-text flask json
 
 RUN mkdir model
 COPY --from=data /models/model_small_bert_bert_en_uncased_L-2_H-128_A-2_20221121-234352 /model/
+
+RUN curl -o answers.json https://raw.githubusercontent.com/skywalkeretw/DBE-Humor-Prototype/master/Datasets/answers.json
 
 # Copy html templates into container
 COPY templates/ templates/
