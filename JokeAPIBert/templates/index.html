@@ -12,16 +12,94 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-    <title>Is Funny?</title>
+    <title class="titel" style="color: yellow ;">You think you are Funnya?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body {
+        background-image: url('orange2.jpg');;
+      }
+
+      button{
+        background-color: #ffc014;
+        border-radius: 100%;
+      }
+      
+      .card {
+        grid-row: 2/3;
+    grid-column: 2/3;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
+      }
+      .icon{
+      width: 35px;
+      height: 35px;
+      align-items: center;
+      justify-content: center;
+      border-radius:"50%"
+      }
+      .btn-label {
+        position: relative;
+	left: -6px;
+	display: inline-block;
+	border-radius: 3px 0 0 3px;
+  font-size: 4em;
+     }
+
+     .form-control{
+    position: relative;
+    font-size: 2em;
+    padding: 1em;
+    min-width: 250px;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #000;
+
+}
+  label {
+    font-size: 4em;
+  }
+  .checkjoke{
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .line{
+    font-size: 2em;
+  }
+  .intro{
+    font-size: 2em;
+  }
+  .container{
+    padding: 0px;
+  }
+  .userinfo{
+    border: 4px black;
+    margin-top: 100px;
+  }
+  .container-fluid{
+    padding-bottom: 10px;
+  }
+  
+      </style>
 </head>
-<body>
-    <div class="jumbotron">
+<body >
+  <div class="logo">
+    <img align="left" src="images.jfif"   alt="bild1" class="rounded" style="border-radius: 5%;" class="img-fluid">
+    <img align="right" src="images.jfif"  alt="bild2" class="rounded" style="border-radius: 5%;" class="img-fluid">
+  </div>
+    <div class="jumbotron jumbotron-fluid" style="background-image: url('orange2.jpg');">
+        
         <div class="container text-center">
-            <h1>Is Funny?</h1>
-            <p>use our AI to see if your jokes are funny</p>
+            <h1 style="font-size: 4em; font-weight: bold;">You think you are Funny?</h1>
+            <div class="userinfo">
+            <p><span class="intro">&#128514|&#128541|&#128584|&#128585|&#128586|&#129299|&#128518</span> </p>
+            <p></p>
+            <p><span class="intro">Use our AI to see if your jokes are homorous!</span></p>
+            <p></p>
+          </div>
+          </div>
         </div>
     </div>
-
     <div class="container-fluid text-center">
         <div class="row">
             <div class="col-sm-12">
@@ -32,30 +110,44 @@
           <div class="col-sm-12">
             <form action="{{ url_for('home') }}" method="post">
                 <div class="form-group">
-                  <label for="joke">New Joke:</label>
-                  <input type="text" class="form-control" id="joke" name="joke">
+                  <label for="joke">Please enter your joke:</label>
+                  <input type="search" placeholder="Enter your joke here" class="form-control" id="joke" name="joke">
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Check Joke</button>
+                <button type="submit" class="btn btn-secondary">
+                  <span class="btn-label" style="font-weight: bold"><i class="fa fa-search" size="large"></i></span><span class="checkjoke"><span class="line">|</span> Check Joke</span></button>
+                <p class="btn" style="font-size: 3em;"> &#129488</p>
             </form> 
           </div>
         </div>
       </div>
       <br>
       {% if joke != "" %}
-      <div class="container-fluid text-center">
+      <div class="container-fluid text-center " style="background-image: url('orange2.jpg');">
         <div class="row">
           {% if percentage > 50 %}
-          <div class="alert alert-success">
+          <div class="alert alert-success" style="background-image: url('orange2.jpg');">
           {% else %}
-          <div class="alert alert-danger">
+          <div class="alert alert-danger" style="background-image: url('orange2.jpg');">
           {% endif %}
-            <p>{{joke}}</p>
-            <p>{{comment}}</p>
-            <p>Percentage: {{percentage}}%</p>
+          <div class="card" style="width: 25rem; border: 3px#D0D0D0;">
+            <img src="{{emoji}}" class="card-img-top " alt="emoji" style="border: 3px#D0D0D0;">
+            <div class="card-body">
+              <h5 class="card-title">Your joke:</h5>
+              <p class="card-text">
+                <p>{{joke}}</p>
+                <p>{{comment}}</p>
+                <p>Percentage: {{percentage}}%</p>
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> 
+         
             <img src="{{emoji}}">
           </div>
           
       </div>
       {% endif %}
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
