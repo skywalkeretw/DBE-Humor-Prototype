@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body {
-        background-image: url('orange2.jpg');;
+        background-image: url('/static/orange2.jpg');;
       }
 
       button{
@@ -84,10 +84,10 @@
 </head>
 <body >
   <div class="logo">
-    <img align="left" src="images.jfif"   alt="bild1" class="rounded" style="border-radius: 5%;" class="img-fluid">
-    <img align="right" src="images.jfif"  alt="bild2" class="rounded" style="border-radius: 5%;" class="img-fluid">
+    <img align="left" src="/static/images.jfif"   alt="bild1" class="rounded" style="border-radius: 5%;" class="img-fluid">
+    <img align="right" src="/static/images.jfif"  alt="bild2" class="rounded" style="border-radius: 5%;" class="img-fluid">
   </div>
-    <div class="jumbotron jumbotron-fluid" style="background-image: url('orange2.jpg');">
+    <div class="jumbotron jumbotron-fluid" style="background-image: url('/static/orange2.jpg');">
         
         <div class="container text-center">
             <h1 style="font-size: 4em; font-weight: bold;">You think you are Funny?</h1>
@@ -122,12 +122,12 @@
       </div>
       <br>
       {% if joke != "" %}
-      <div class="container-fluid text-center " style="background-image: url('orange2.jpg');">
+      <div class="container-fluid text-center " style="background-image: url('/static/orange2.jpg');">
         <div class="row">
           {% if percentage > 50 %}
-          <div class="alert alert-success" style="background-image: url('orange2.jpg');">
+          <div class="alert alert-success" style="background-image: url('/static/orange2.jpg');">
           {% else %}
-          <div class="alert alert-danger" style="background-image: url('orange2.jpg');">
+          <div class="alert alert-danger" style="background-image: url('/static/orange2.jpg');">
           {% endif %}
           <div class="card" style="width: 25rem; border: 3px#D0D0D0;">
             <img src="{{emoji}}" class="card-img-top " alt="emoji" style="border: 3px#D0D0D0;">

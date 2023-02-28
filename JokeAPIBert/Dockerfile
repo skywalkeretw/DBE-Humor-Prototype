@@ -10,8 +10,9 @@ COPY --from=data /models/model_small_bert_bert_en_uncased_L-2_H-128_A-2_20221121
 
 RUN curl -o answers.json https://raw.githubusercontent.com/skywalkeretw/DBE-Humor-Prototype/master/Datasets/answers.json
 
-# Copy html templates into container
+# Copy html templates and static into container
 COPY templates/ templates/
+COPY static/ static/
 # Copy python application into container
 COPY main.py /main.py
 # expose Application on port 8080 to be able to access the webapp
