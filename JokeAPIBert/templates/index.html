@@ -25,6 +25,8 @@
       }
       
       .card {
+        background-color: rgba(240, 248, 255, 0.767);
+        border-radius: 20px;
         grid-row: 2/3;
     grid-column: 2/3;
     margin: 0 auto;
@@ -83,14 +85,14 @@
       </style>
 </head>
 <body >
-  <div class="logo">
+ <!-- <div class="logo">
     <img align="left" src="images.jfif"   alt="bild1" class="rounded" style="border-radius: 5%;" class="img-fluid">
     <img align="right" src="images.jfif"  alt="bild2" class="rounded" style="border-radius: 5%;" class="img-fluid">
-  </div>
+  </div> -->
     <div class="jumbotron jumbotron-fluid" style="background-image: url('orange2.jpg');">
         
         <div class="container text-center">
-            <h1 style="font-size: 4em; font-weight: bold;">You think you are Funny?</h1>
+            <h1 >You think you are Funny?</h1>
             <div class="userinfo">
             <p><span class="intro">&#128514|&#128541|&#128584|&#128585|&#128586|&#129299|&#128518</span> </p>
             <p></p>
@@ -129,7 +131,7 @@
           {% else %}
           <div class="alert alert-danger" style="background-image: url('orange2.jpg');">
           {% endif %}
-          <div class="card" style="width: 25rem; border: 3px#D0D0D0;">
+          <!--<div class="card" style="width: 25rem; border: 3px#D0D0D0;">
             <img src="{{emoji}}" class="card-img-top " alt="emoji" style="border: 3px#D0D0D0;">
             <div class="card-body">
               <h5 class="card-title">Your joke:</h5>
@@ -137,12 +139,23 @@
                 <p>{{joke}}</p>
                 <p>{{comment}}</p>
                 <p>Percentage: {{percentage}}%</p>
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              </p>-->
+              <div class="card" style="width: 18rem;">
+                <img src="{{emoji}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    <p>{{joke}}</p>
+                    <p>{{comment}}</p>
+                    <p>Percentage: {{percentage}}%</p>
+                  </p>-->
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
             </div>
           </div> 
          
-            <img src="{{emoji}}">
+            
           </div>
           
       </div>
