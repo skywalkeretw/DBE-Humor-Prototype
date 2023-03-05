@@ -15,6 +15,10 @@ COPY templates/ templates/
 COPY static/ static/
 # Copy python application into container
 COPY main.py /main.py
+
+# Set Env Variables
+ENV CUDA_VISIBLE_DEVICES=''
+ENV TF_CPP_MIN_LOG_LEVEL='3' 
 # expose Application on port 8080 to be able to access the webapp
 EXPOSE 8080
 
