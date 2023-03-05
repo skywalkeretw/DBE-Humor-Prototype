@@ -5,30 +5,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title class="titel" style="color: yellow;">You think you are Funnya?</title>
+  <title class="titel" style="color: yellow;">JOKY</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="{{ url_for('static', filename='icon.svg') }}">
   <style>
-    .cropped {
-      height: 300px;
-      width: auto;
-      overflow: hidden;
-      
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-    }
     .title {
       font-weight: bold;
       font-style: italic;
       font-size: 6em;
     }
+
+    .comment {
+      text-align: center;
+      font-size: 1.5em;
+    }
   </style>
   <script>
+    function submitOnEnter(event) {
+      if (event.which === 13 && !event.shiftKey) {
+          if (!event.repeat) {
+              const newEvent = new Event("submit", {cancelable: true});
+              event.target.form.dispatchEvent(newEvent);
+          }
 
+          event.preventDefault(); // Prevents the addition of a new line in the text field
+      }
+  }
+
+  document.getElementById("joke").addEventListener("keydown", submitOnEnter);
+  document.getElementById("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
   </script>
 </head>
 
@@ -55,15 +65,15 @@
         </div>
         <div class="row">
           <div class="col">
-            <h3 class="d-flex justify-content-center">{{comment}}</h3>
+            <p class="d-flex justify-content-center comment">"{{comment}}"</p>
           </div>
         </div>
         <div class="row">
           <div class="col">
           {% if percentage > 50 %}
-          <p class="d-flex justify-content-center">This is a joke and I'm {{percentage}}% sure about it</p>
+          <p class="d-flex justify-content-center text-muted">This is a joke and I'm {{percentage}}% sure about it.</p>
           {% else %}
-          <p class="d-flex justify-content-center">This is not a joke and I'm {{100 - percentage}}% sure about it</p>
+          <p class="d-flex justify-content-center text-muted">This is not a joke and I'm {{100 - percentage}}%  sure about it.</p>
           {% endif %}
           </div>
         </div>
@@ -73,10 +83,9 @@
 
     <div class="row">
       <div class="col">
-        <form action="{{ url_for('home') }}" method="post">
+        <form action="{{ url_for('home') }}" method="post" id="form">
           <div class="mb-3 mt-3">
-            <!-- <textarea class="form-control" rows="5" placeholder="Enter your sentence here" id="joke" name="joke">{{joke}}</textarea> -->
-            <input type="text" class="form-control form-control-lg" placeholder="Enter your sentence here" id="joke" name="joke" value="{{joke}}">
+            <textarea class="form-control" rows="5" placeholder="Enter your sentence here" id="joke" name="joke">{{joke}}</textarea>
           </div>
           <div class="d-grid">
             <button type="submit" class="btn btn-warning btn-block">Check</button>
