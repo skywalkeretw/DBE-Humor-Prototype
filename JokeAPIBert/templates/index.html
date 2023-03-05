@@ -12,130 +12,79 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="{{ url_for('static', filename='icon.svg') }}">
   <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
-
-
-      .app-container {
-      padding-top: 20px;
-      }
-
-      body {
-      background-color: #eee;
-      font-family: "Poppins", sans-serif;
-      font-weight: 300;
-      height: 100%;
-      }
-
-      .search {
-      position: relative;
-      box-shadow: 0 0 40px rgba(51, 51, 51, .1);
-      }
-
-      .search input {
-      height: 60px;
-      text-indent: 25px;
-      border: 2px solid #d6d4d4;
-      }
-
-
-      .search input:focus {
-      box-shadow: none;
-      border: 2px solid blue;
-      }
-
-      .search .fa-search {
-      position: absolute;
-      top: 20px;
-      left: 16px;
-
-      }
-
-      .search button {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      height: 50px;
-      width: 110px;
-      background: blue;
-      }
-
-      .cardClass {
-      display: flex;
-      justify-content: center;
-      }
-
-      .formClass {
-      margin-top: 20px;
-      }
-
-      .headerTitle {
-      margin-top: 20px;
-      }
-
-      .result {
-      margin-top: 20px;
-      }
+    .cropped {
+      height: 300px;
+      width: auto;
+      overflow: hidden;
+      
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+    .title {
+      font-weight: bold;
+      font-style: italic;
+      font-size: 6em;
+    }
   </style>
+  <script>
+
+  </script>
 </head>
 
 <body>
-
-  <div class="app-container d-flex flex-column min-vh-100 container">
-    <!-- <h1 class="d-flex justify-content-center headerTitle">JOKY</h1> -->
-    <!-- <svg width="auto" height="50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="hidden"><defs><clipPath id="clip0"><rect x="142" y="739" width="2489" height="1329"/></clipPath></defs><g clip-path="url(#clip0)" transform="translate(-142 -739)"><text fill="#FCC903" font-family="Google Sans,Google Sans_MSFontService,sans-serif" font-style="italic" font-weight="700" font-size="633" transform="matrix(1 0 0 1 522.342 1514)">JOKY</text></g></svg> -->
-    <img src="/static/joky.svg">
-    <h2 class="d-flex justify-content-center">The Joke Detector</h2>
-    <h3 class="d-flex justify-content-center">Let an AI decide if you're funny!</h3>
-
-
-    <form action="{{ url_for('home') }}" method="post" class="formClass">
-      <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-md-8">
-          <div class="search form-group">
-          <i class="fa fa-search"></i>
-          <input type="text" class="form-control" placeholder="Enter your sentence here" id="joke" name="joke">
-          <button class="btn btn-primary">Search</button>
-          </div>
+  <div class="container" >
+    <!-- Title -->
+    <div class="row">
+      <div class="col">
+        <!-- <img src="/static/joky.svg" class="img-fluid cropped"> -->
+        <h1 class="d-flex justify-content-center text-warning title" >JOKY</h1>
+        <h2 class="d-flex justify-content-center">The Joke Detector</h2>
+        <h3 class="d-flex justify-content-center text-muted">Let an AI decide if you're funny!</h3>
       </div>
-      </div>
-    </form>
-
-    <div class="result"> 
-        {% if joke != "" %}
-        <div class=" text-center">
+    </div>
+  <!-- Output  -->
+    {% if joke != "" %}
+      <div>
         <div class="row">
-            {% if percentage > 50 %}
-            <div class="alert alert-success">
-            {% else %}
-            <div class="alert alert-danger">
-            {% endif %}
-            <div class="cardClass">
-                <div class="card" style="width: 18rem;">
-                <img src="{{emoji}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <div class="card-text">
-                    <p>{{joke}}</p>
-                    <p>{{comment}}</p>
-                    {% if percentage > 50 %}
-                    <p>This is a joke and I'm {{percentage}}% sure about it</p>
-                    {% else %}
-                    <p>This is not a joke and I'm {{100 - percentage}}% sure about it</p>
-                    {% endif %}
-                    </div>
-                </div>
-                </div>
+          <div class="col">
+            <div class="text-center">
+              <img src="{{emoji}}" class="img-fluid">
             </div>
-            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <h3 class="d-flex justify-content-center">{{comment}}</h3>
+          </div>
         </div>
-        {% endif %}
+        <div class="row">
+          <div class="col">
+          {% if percentage > 50 %}
+          <p class="d-flex justify-content-center">This is a joke and I'm {{percentage}}% sure about it</p>
+          {% else %}
+          <p class="d-flex justify-content-center">This is not a joke and I'm {{100 - percentage}}% sure about it</p>
+          {% endif %}
+          </div>
+        </div>
+    {% endif %}
+
+    <!-- Form -->
+
+    <div class="row">
+      <div class="col">
+        <form action="{{ url_for('home') }}" method="post">
+          <div class="mb-3 mt-3">
+            <!-- <textarea class="form-control" rows="5" placeholder="Enter your sentence here" id="joke" name="joke">{{joke}}</textarea> -->
+            <input type="text" class="form-control form-control-lg" placeholder="Enter your sentence here" id="joke" name="joke" value="{{joke}}">
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-warning btn-block">Check</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-
-
-
-
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

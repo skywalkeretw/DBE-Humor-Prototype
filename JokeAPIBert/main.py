@@ -43,12 +43,13 @@ def home():
         prediction = tf.sigmoid(model(tf.constant(sentence))).numpy()[0][0].item()
         percentage = prediction*100
         comment, emoji = getAnswer(percentage) 
+        percentage = round(percentage, 1)
     # Template generation for flask pass specify the name of the template variable and its data 'varname=data' e.g joke=joke
     return render_template('index.html', joke=joke, percentage=percentage, comment=comment, emoji=emoji)
 
 
 if __name__ == '__main__':
-
+    from waitress import serve
     global model
     # Load Trained Model
     model =  tf.saved_model.load('/model')
@@ -57,4 +58,5 @@ if __name__ == '__main__':
         answers = json.load(json_file)
 
     # Run Server on Port 8080
-    app.run(debug=False, host='0.0.0.0', port=8080)
+    #app.run(debug=False, host='0.0.0.0', port=8080)
+    serve(app, host="0.0.0.0", port=8080)
