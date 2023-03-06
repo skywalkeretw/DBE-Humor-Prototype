@@ -1,42 +1,139 @@
 {
     "100": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/rolling-on-the-floor-laughing_1f923.png"], 
-        "comments": ["Damn, that's funny as hell! Have you ever tried a comedy career?"]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/rolling-on-the-floor-laughing_1f923.png"
+        ], 
+        "comments": [
+            "Damn, that's funny as hell! Have you ever tried a comedy career?",
+            "I think I just peed myself!",
+            "Haha I'm dying on the floor",
+            "You are so funny you should be in prison!"
+        ],
+        "examples": [
+            "Why couldn’t the leopard play hide and seek? Because he was always spotted."
+        ]
     },
     "90": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/face-with-tears-of-joy_1f602.png"], 
-        "comments": ["Haha, good joke, buddy! Keep up the good work!"]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/face-with-tears-of-joy_1f602.png"
+        ], 
+        "comments": [
+            "Haha, good joke, buddy! Keep up the good work!",
+            "This is lit!",
+            "You are ready to get your own stage today!",
+            "LMAO!"
+            
+        ],
+        "examples": [
+            "Why do Americans take a gun while they go fishing ? Cause groups of fish are called schools."
+        ]
     },
     "80": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/grinning-squinting-face_1f606.png"], 
-        "comments": ["You are quite funny today!"]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/grinning-squinting-face_1f606.png"
+        ], 
+        "comments": [
+            "You are quite funny today!",
+            "An excellent joke",
+            "Hilarious!"
+        ],
+        "examples": [
+            "How do trees get online? They just log on!"
+        ]
     },
     "70": {
         "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/grinning-face-with-sweat_1f605.png"], 
-        "comments": ["I also laughed a bit in 010100101 - Thank you!"]
+        "comments": [
+            "I also laughed a bit in 010100101 - Thank you!",
+            "That's pretty good! Keep it up!",
+            "I think you ate a clown today!"
+        ],
+        "examples": [
+            "I would like a cup of tea"
+        
+        ]
     },
     "60": {
         "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/face-with-monocle_1f9d0.png"], 
-        "comments": ["Well, you can let it pass as a joke."]
+        "comments": [
+            "Well, you can let it pass as a joke.",
+            "I give you a 4 you just passed.",
+            "This will do... just.",
+            "I guess this is funny"
+        ],
+        "examples": [
+            ""
+        ]
     },
     "50": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/face-with-raised-eyebrow_1f928.png"], 
-        "comments": ["I don't get this joke...Maybe it's because it isn't one?"]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/face-with-raised-eyebrow_1f928.png"
+        ], 
+        "comments": [
+            "I don't get this joke...Maybe it's because it isn't one?",
+            "Are you sure this is a joke?",
+            "Your a little confused, but you have got the spirit"
+        ],
+        "examples": [
+            "I have to study pass me a beer ",
+            "Im not sure that this should be a joke",
+            "I'm a little bit confused"
+            
+
+        ]
     },
     "40": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/yawning-face_1f971.png"], 
-        "comments": ["This is not a real joke you are telling me here, is it?"]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/yawning-face_1f971.png"
+        ], 
+        "comments": [
+            "This is not a real joke you are telling me here, is it?",
+            "You can not be serious",
+            "You are getting there just a bit more"
+        ],
+        "examples": [
+            "How do i open a door."
+        ]
     },
     "30": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/nerd-face_1f913.png"], 
-        "comments": ["Did you copy that from Wikipedia or the news?"]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/nerd-face_1f913.png"
+        ], 
+        "comments": [
+            "Did you copy that from Wikipedia or the news?",
+            "And you think you are funny?",
+            "I think you can do it better"
+        ],
+        "examples": [
+            "If you're American when you go in the bathroom"
+        ]
     },
     "20": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/face-with-peeking-eye_1fae3.png"], 
-        "comments": ["Pretty serious stuff you're telling me here."]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/face-with-peeking-eye_1fae3.png",
+            ""
+    
+        ], 
+        "comments": [
+            "Pretty serious stuff you're telling me here.",
+            "Who told you that this is a joke?",
+            "This is not entertaining...."
+        ],
+        "examples": [
+            ""
+        ]
     },
     "10": {
-        "emojis": ["https://em-content.zobj.net/thumbs/240/apple/325/smiling-face-with-tear_1f972.png"], 
-        "comments": ["Why so serious?"]
+        "emojis": [
+            "https://em-content.zobj.net/thumbs/240/apple/325/smiling-face-with-tear_1f972.png"
+        ], 
+        "comments": [
+            "Why so serious?",
+            "This is definitely not a Joke!",
+            "Please stop you are not funny!"
+        ],
+        "examples": [
+            "I have to study"
+        ]
     }
 }
