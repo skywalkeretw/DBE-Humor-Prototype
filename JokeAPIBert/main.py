@@ -9,6 +9,8 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import tensorflow_text as text
 
+import pyjokes
+
 
 #-------------------------------------------
 
@@ -47,6 +49,12 @@ def home():
     # Template generation for flask pass specify the name of the template variable and its data 'varname=data' e.g joke=joke
     return render_template('index.html', joke=joke, percentage=percentage, comment=comment, emoji=emoji)
 
+@app.route('/joke', methods=['GET','POST'])
+def joke():
+    joke = pyjokes.get_joke(language='en' , category='all')
+
+    # Template generation for flask pass specify the name of the template variable and its data 'varname=data' e.g joke=joke
+    return render_template('joke.html', joke=joke,)
 
 if __name__ == '__main__':
     from waitress import serve
