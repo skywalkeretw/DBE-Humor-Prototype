@@ -18,9 +18,13 @@
       font-style: italic;
       font-size: 8em;
     }
-    .comment {
+    .joke {
       text-align: center;
-      font-size: 1.5em;
+      font-size: 2em;
+      font-weight: bolder;
+    }
+    a {
+      text-decoration: none;
     }
   </style>
 </head>
@@ -31,14 +35,15 @@
     <div class="row">
       <div class="col">
         <!-- <img src="/static/joky.svg" class="img-fluid cropped"> -->
-        <h1 class="d-flex justify-content-center text-warning title" >JOKY</h1>
+        <a href="{{ url_for('home') }}"><h1 class="d-flex justify-content-center text-warning title" >JOKY</h1></a>
         <h2 class="d-flex justify-content-center">The Joke Detector</h2>
         <h3 class="d-flex justify-content-center text-muted">Let an AI decide if you're funny!</h3>
       </div>
     </div>
+    <br><br>
     <div class="myout row">
       <div class="col">
-        <p class="d-flex justify-content-center comment">{{joke}}</p>
+        <p class="d-flex justify-content-center joke">{{joke}}</p>
       </div>
     </div>
 
