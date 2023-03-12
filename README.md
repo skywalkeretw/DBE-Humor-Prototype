@@ -73,3 +73,49 @@ __Zeitraum:__ März 2022 - März 2023
 	 -Ein remote Jupyter Notebook ist nicht ideal für den Use Case „Automatisiertes Training von ML-Modellen im Hintergrund“ 
      Zellen-Output geht verloren, siehe Restoring computation output after disconnect in Jupyter notebook
 	- Wenig praxisnahe Dokumentation zur Optimierung von BERT in Zusammenspiel mit Tensor Flow
+
+
+## Development 
+
+### JokeAPI
+
+Containerized Flask server that uses a Tensorflow to detect humor.
+Model is trained during build step. And loaded when the server is started.
+
+Build image from inside JokeAPI dir
+```bash
+docker build -t humor-prototype-1 .
+```
+
+Run the image locally 
+```bash
+docker run -p 8080:8080 humor-prototype-1
+```
+
+### JokeAPIBert
+
+Containerized Flask server that uses a pre trained Bert  Model  from our `lukeroy/dbe-models:latest` image.
+Detects if Senteces are Jokes or not.
+There are 2 endpoints `/home` and `/joke`
+
+Build image from inside JokeAPIBert dir
+```bash
+docker build -t humor-prototype-2-bert .
+```
+
+Run the image locally 
+```bash
+docker run -p 8080:8080 humor-prototype-2-bert
+```
+
+### scripts_and_snippets
+
+Contains the notebooks, scripts and Dockerfiles used to generate and store our models and test them.
+
+### Datasets
+
+Contains all our Datasets and Datafiles used during the project
+
+### experiments 
+
+Contains all our experiments and test we did during development
