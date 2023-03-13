@@ -1,10 +1,10 @@
 # Humorerkennung im Natural Language Processing (NLP)
 ### Hochschule Reutlingen  
-#### Master Digital Business Engineering
+### Master Digital Business Engineering
 
 
 __Betreuerin:__ Prof. Dr. Elena Kuß  
-__Projektteam:__ Maria Katharina Fürholzer, Gowseegan Kanagaratnam, Luke Roy, Lucas Schweizer 
+__Projektteam:__ Maria Katharina Fürholzer, Gowseegan Kanagaratnam, Luke Roy, Lucas Schweizer  
 __Zeitraum:__ März 2022 - März 2023
 
 ## Milestones des Projekts:
@@ -69,7 +69,7 @@ __Zeitraum:__ März 2022 - März 2023
     ### LESSONS LEARNED: Technische Aspekte
     - Einbindung von NLP-Modellen bedarf großer Rechenleistung
 	- Der INF-Server hatte für größere BERT-Modelle zu wenig Leistung
-	- Auf der IBM Cloud mit GPUs (Danke an Lukes Manager bei IBM) konnte unser     automatisiertes Skript leider nicht adhoc initialisiert werden; da uns die IBM Cloud nur für ein paar Stunden zu Verfügung stand, konnten wir den GPU-Support nicht in unser Skript implementieren
+	- Auf der IBM Cloud mit GPUs (Danke an Lukes Manager bei IBM) konnte unser     automatisiertes Skript leider nicht adhoc initialisiert werden
 	 -Ein remote Jupyter Notebook ist nicht ideal für den Use Case „Automatisiertes Training von ML-Modellen im Hintergrund“ 
      Zellen-Output geht verloren, siehe Restoring computation output after disconnect in Jupyter notebook
 	- Wenig praxisnahe Dokumentation zur Optimierung von BERT in Zusammenspiel mit Tensor Flow
